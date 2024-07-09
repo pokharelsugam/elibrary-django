@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <h3 style = "text-align:center; color:blue">Please use search query like; &nbsp;  "Book Name, Author, Category, Publisher or ISBN"</h3>
+    <h1>Book Search Results</h1>
+    
+
+        <p style="font-size:140%"  > Book search results for  "  {{query}}  "  are given below: </p>
+        <ol>
+            {% for book in books %}
+                <li>
+                    <a href="{% url 'book_get' book.id %}">{{ book.name }}</a> 
+                    ,
+                    {% for author in book.author.all %}
+                        {{ author.name }}{% if not forloop.last %}, {% endif %}
+                    
+                    {% endfor %}
+                    ,
+                    {{book.category.name}}
+                    ,
+                    {{book.publisher.name}}
+                    ,
+                    {{book.isbn}}
+                </li>
+                    <br>
+        
+            {% empty %}
+                <h3 style = "color:red; font-size:40px" >No books were found! Please search by different query.</h3>
+            {% endfor %}
+    
+</body>
+</html>
+    
