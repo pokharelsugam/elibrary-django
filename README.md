@@ -57,12 +57,13 @@ A comprehensive Library Management System built with Django. This project includ
     ├── static
     │   ├── css
     │   │   └── styles.css
-    │   └── images    
+    │   └── images
+    │       └── LMS_Banner.jpg   
     ├── LMS
     │   ├── __pycache__
     │   ├── __init__.py
     │   ├── asgi.py
-    │   ├── setting.py
+    │   ├── settings.py
     │   ├── urls.py
     │   └── wsgi.py
     ├── manage.py
@@ -97,6 +98,7 @@ A comprehensive Library Management System built with Django. This project includ
    <pre><code>
    virtualenv env
    env\scripts\activate
+   pip install django
    </code></pre>
 10. Run the migrations
     <pre><code>
